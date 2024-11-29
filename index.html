@@ -4,41 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Музыкальные термины</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
             line-height: 1.6;
             margin: 10px;
             background: url('img/chill-guy-meme-png-para-descargar 1.png') no-repeat center center fixed;
             background-size: 50% auto;
             color: #fff;
+            padding-bottom: 40px;
         }
         h1, h2 {
             color: #000000;
-        
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         h1 {
             text-align: center;
-            font-size: 5rem;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
         h2 {
-            font-size: 3rem;
+            font-size: 2rem;
+            margin-top: 30px;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            background: rgba(0, 0, 0, 0.7);
-            margin: 10px 0;
+            margin: 10px 15px;
             padding: 10px;
             border-radius: 5px;
             font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
+        ul li:hover {
+            background-color: #ff6f61;
+            transform: scale(1.01);
+        }
+        .one li { background: #474745; }
+        .two li { background: #453C41; }
+        .three li { background: #7B7C81; }
+        .four li { background: #7B586B; }
+
+        .section-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            font-size: 1.2rem;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .section-button:hover {
+            background-color: #e65c52;
+        }
+
+        /* Анимация подсветки */
+        .highlight {
+            background-color: #ff6f61;
+            animation: highlightEffect 5s ease-out;
+        }
+        
+        @keyframes highlightEffect {
+            0% { background-color: #ff6f61; }
+            100% { background-color: #fff; }
+        }
+
+        /* Адаптивность */
         @media (max-width: 768px) {
             body {
                 margin: 5px;
             }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            ul li {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+            .section-button {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
             h1 {
                 font-size: 1.8rem;
             }
@@ -46,20 +106,12 @@
                 font-size: 1.3rem;
             }
             ul li {
-                font-size: 0.9rem;
-                padding: 8px;
-            }
-        }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.1rem;
-            }
-            ul li {
                 font-size: 0.8rem;
                 padding: 6px;
+            }
+            .section-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -67,8 +119,13 @@
 <body>
     <h1>Музыкальные термины</h1>
 
-    <h2>По оборудованию:</h2>
-    <ul>
+    <a href="#equipment" class="section-button">Перейти к оборудованию</a>
+    <a href="#sound" class="section-button">Какой бывает звук</a>
+    <a href="#effects" class="section-button">Эффекты</a>
+    <a href="#terms" class="section-button">Музыкальные термины</a>
+
+    <h2 id="equipment">По оборудованию:</h2>
+    <ul class="one">
         <li>Дибокс - устройство, соединяющее муз. инструмент и звуковой пульт, позволяет нормализовать сигнал до рабочего уровня.</li>
         <li>Земля - канал в электрической сети для отвода напряжения. «Подключи землю» - отведи фоновые помехи от инструмента.</li>
         <li>Фонит - когда в канал подключения попадают помехи или происходит замыкание контактов, то возникает гудение/шипение.</li>
@@ -87,8 +144,8 @@
         <li>Обратная связь (заводка) – когда звук попадает из колонки снова в микрофон и опять идет в колонку, то образуется бесконечная петля. Исправить ее можно, если убрать микрофон от колонки. Не стоит перекрывать руками микрофон, это тоже часто создает заводку.</li>
     </ul>
 
-    <h2>Какой бывает звук:</h2>
-    <ul>
+    <h2 id="sound">Какой бывает звук:</h2>
+    <ul class="two">
         <li>Как в бочке – много средне-низких частот (350-500Гц).</li>
         <li>Гнусавый – много частот нижней середины (400Гц).</li>
         <li>Мутный – мало верхних частот или много лишнего сигнала.</li>
@@ -100,8 +157,8 @@
         <li>Долбящий – много нижних частот (100-250Гц).</li>
     </ul>
 
-    <h2>Эффекты:</h2>
-    <ul>
+    <h2 id="effects">Эффекты:</h2>
+    <ul class="three">
         <li>Реверберация(Ревер) - плавное уменьшение звучания звука с многократным отражением. Когда сигнал из источника идет напрямую в приемник (уши\микрофон) и к нему дополнительно подмешивается звук отраженный от поверхностей вокруг.</li>
         <li>Делей - имитация эхо. Когда сигнал постепенно затухает и повторяется с одинаковым интервалом времени.</li>
         <li>Перегруз (Дисторшн и Овердрайв) - звук получаемый при обрезании амплитуды звуковой волны в следствие чего она искажается. В овердрайве амплитуда обрезается плавнее чем в дисторшене и искажения звучат мягче.</li>
@@ -110,12 +167,24 @@
         <li>Хорус - эффект добавляющий дополнительные голоса к инструменту, создающий ощущения что играет несколько инструментов одновременно.</li>
     </ul>
 
-    <h2>Музыкальные термины:</h2>
-    <ul>
+    <h2 id="terms">Музыкальные термины:</h2>
+    <ul class="four">
         <li>Флажолет (натуральный/искусственный/медиаторный) - прием игры на музыкальных инструментах, заключающийся в извлечении звука-обертона.</li>
         <li>Бэнд/подтяжка - прием игры на музыкальном инструменте. Достигается повышением или понижением тона, зажимая определенную ноту.</li>
         <li>Слайд - от английского скользить, скольжение от одной ноты к другой цепляя остальные ноты по пути (глиссандо).</li>
         <li>Грув - ощущение получаемое от ритма, когда хочется танцевать.</li>
     </ul>
+
+    <script>
+        // Для подсветки перехода к разделу
+        const links = document.querySelectorAll('.section-button');
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                const target = document.querySelector(link.getAttribute('href'));
+                target.classList.add('highlight');
+                setTimeout(() => target.classList.remove('highlight'), 2000); // Убираем подсветку через 2 секунды
+            });
+        });
+    </script>
 </body>
 </html>
